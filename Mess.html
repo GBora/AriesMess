@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html  data-ng-app = "myApp" > <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+        <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+        <script type="text/javascript" src="js/base.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        
+    </head>
+    <body data-ng-controller = "myCtrl">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+`
+
+        <div class="well span6" data-ng-hide="user">
+        	       
+        
+                    <label >Username</label>
+                    <input type="text" class="span3" data-ng-model="userName">
+
+                    <label >Password</label>
+                    <input type="text" class="span3" data-ng-model="userPass">
+
+                    <br />
+
+                    <button class="btn btn-primary" data-ng-click="login();"> Login</button>
+        </div>
+
+
+        <div class="well span6" data-ng-show="user">
+                   <label> Message List </label>
+        </div>
+
+
+        <div class="well span6" data-ng-show="user">
+                   
+        
+                    <label >To: </label>
+                    <input type="text" class="span3" data-ng-model="messRecipient">
+
+                    <label >Message</label>
+                    <input type="text" class="span3" data-ng-model="messBody">
+
+                    <br />
+
+                    <button class="btn btn-primary" data-ng-click="">Send Message</button>
+        </div>
+
+
+
+        <script type="text/javascript" src="js/bootstrap.js">
+
+        </script>
+    </body>
+</html>
