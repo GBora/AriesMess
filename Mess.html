@@ -15,6 +15,7 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
         <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+        <script src="http://cdn.firebase.com/libs/angularfire/0.7.0/angularfire.min.js"></script>
         <script type="text/javascript" src="js/base.js"></script>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
@@ -28,7 +29,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-`
+``
 
         <div class="well span6" data-ng-hide="user">
         	       
@@ -47,6 +48,16 @@
 
         <div class="well span6" data-ng-show="user">
                    <label> Message List </label>
+
+                   <ol>
+                       <li ng-repeat="message in messageList">
+                           From {{ message.sender}} <br/>
+
+                           {{mesage.body}}
+
+                       </li>
+
+                   </ol>
         </div>
 
 
@@ -61,7 +72,7 @@
 
                     <br />
 
-                    <button class="btn btn-primary" data-ng-click="">Send Message</button>
+                    <button class="btn btn-primary" data-ng-click="send();">Send Message</button>
         </div>
 
 
