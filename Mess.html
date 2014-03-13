@@ -21,7 +21,7 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        
+
     </head>
     <body data-ng-controller = "myCtrl">
         <!--[if lt IE 7]>
@@ -29,51 +29,62 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-``
 
-        <div class="well span6" data-ng-hide="user">
-        	       
-        
-                    <label >Username</label>
-                    <input type="text" class="span3" data-ng-model="userName">
 
-                    <label >Password</label>
-                    <input type="text" class="span3" data-ng-model="userPass">
 
-                    <br />
+        <div class="row">
+            <div class="well span6" data-ng-hide="user">
 
-                    <button class="btn btn-primary" data-ng-click="login();"> Login</button>
+
+                <label >Username</label>
+                <input type="text" class="span3" data-ng-model="userName">
+
+                <label >Password</label>
+                <input type="text" class="span3" data-ng-model="userPass">
+
+                <br />
+
+                <button class="btn btn-primary" data-ng-click="login();"> Login</button>
+            </div>
         </div>
 
 
-        <div class="well span6" data-ng-show="user">
-                   <label> Message List </label>
 
-                   <ol>
-                       <li ng-repeat="message in messageList">
-                           From {{ message.sender}} <br/>
 
-                           {{mesage.body}}
+        <div class="row">
+            <div class="well span6" data-ng-show="user">
+                <label> Message List </label>
 
-                       </li>
+                <ul>
+                    <li ng-repeat="message in messageList">
+                        <div class="span3">
+                            <p> {{message.sender}}</p>
+                            <p> {{message.body}}</p>
+                        </div>
+                    </li>
 
-                   </ol>
+                </ul>
+            </div>
         </div>
 
 
-        <div class="well span6" data-ng-show="user">
-                   
-        
-                    <label >To: </label>
-                    <input type="text" class="span3" data-ng-model="messRecipient">
+        <div class="row">
+            <div class="well span6" data-ng-show="user">
 
-                    <label >Message</label>
-                    <input type="text" class="span3" data-ng-model="messBody">
 
-                    <br />
+                <label >To: </label>
+                <input type="text" class="span3" data-ng-model="messRecipient">
 
-                    <button class="btn btn-primary" data-ng-click="send();">Send Message</button>
+                <label >Message</label>
+                <input type="text" class="span3" data-ng-model="messBody">
+
+                <br />
+
+                <button class="btn btn-primary" data-ng-click="send();">Send Message</button>
+            </div>
         </div>
+
+
 
 
 
