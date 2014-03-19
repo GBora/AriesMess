@@ -13,6 +13,36 @@ angular.module("myApp", ["firebase"])
                 $scope.messages = chatService;
                 $scope.messageList = chatService;
 
+                var chatRef = new Firebase('https://logintestapp.firebaseio.com/');
+
+                var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
+                    if (error) {
+                        // an error occurred while attempting login
+                        console.log(error);
+                    } else if (user) {
+                        // user authenticated with Firebase
+                        console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
+                        //
+                    } else {
+                        // user is logged out
+                        
+                    }
+                });
+
+
+
+
+
+                $scope.loginFB = function() {
+                    
+                    auth.login('facebook', {
+                        rememberMe: false,
+                        scope: 'email,user_likes'
+                    });
+
+                    $scope.user = true;
+                }
+
                 $scope.login = function() {
 
                     console.log("name " + $scope.userName + " " + "password " + $scope.userPass);
